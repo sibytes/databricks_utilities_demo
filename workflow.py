@@ -4,15 +4,13 @@ discover_modules.go(spark)
 
 # COMMAND ----------
 
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
 from utilities.workflows import(
   Notebook,
   execute_notebooks
 )
+from utilities import get_logger
+
+logger = get_logger(__name__)
 
 
 # build a list of notebooks to run
@@ -30,5 +28,5 @@ notebooks = [
 results = execute_notebooks(notebooks, 4, dbutils)
 
 # show the results
-logging.info(results)
+logger.info(results)
 
