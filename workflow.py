@@ -4,11 +4,11 @@ discover_modules.go(spark)
 
 # COMMAND ----------
 
-from utilities.workflows import(
-  Notebook,
+from utilities import (
+  get_logger, 
+  Notebook, 
   execute_notebooks
 )
-from utilities import get_logger
 
 logger = get_logger(__name__)
 
