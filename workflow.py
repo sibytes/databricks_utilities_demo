@@ -5,13 +5,9 @@ discover_modules.go(spark)
 # COMMAND ----------
 
 from utilities import (
-  get_logger, 
   Notebook, 
   execute_notebooks
 )
-
-logger = get_logger(__name__)
-
 
 # build a list of notebooks to run
 task_root = "./workflow_tasks/"
@@ -27,6 +23,7 @@ notebooks = [
 # execute the notebooks in parallel
 results = execute_notebooks(notebooks, 4, dbutils)
 
-# show the results
-logger.info(results)
+# show the notebook returns
+from pprint import pprint
+pprint(results)
 
